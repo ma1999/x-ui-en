@@ -1,26 +1,26 @@
 # x-ui
-支持多协议多用户的 xray 面板
+xray panel with multi-protocol multi-user support
 
-# 功能介绍
-- 系统状态监控
-- 支持多用户多协议，网页可视化操作
-- 支持的协议：vmess、vless、trojan、shadowsocks、dokodemo-door、socks、http
-- 支持配置更多传输配置
-- 流量统计，限制流量，限制到期时间
-- 可自定义 xray 配置模板
-- 支持 https 访问面板（自备域名 + ssl 证书）
-- 更多高级配置项，详见面板
+# Features
+- System Status Monitoring
+- Support multi-user multi-protocol, web page visualization operation
+- Supported Protocols：vmess、vless、trojan、shadowsocks、dokodemo-door、socks、http
+- Support for configuring more transport configurations
+- Traffic statistics, limit traffic, limit expiration time
+- Customizable xray configuration templates
+- Support https access panel (bring your own domain name + ssl certificate)
+- For more advanced configuration items, please refer to the panel
 
-# 安装&升级
+# Install & Upgrade
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 ```
 
-## 手动安装&升级
-1. 首先从 https://github.com/vaxilu/x-ui/releases 下载最新的压缩包，一般选择`amd64`架构
-2. 然后将这个压缩包上传到服务器的`/root/`目录下，并使用`root`用户登录服务器
+## Manual install & upgrade
+1. First from https://github.com/vaxilu/x-ui/releases Download the latest compressed package, generally choose`amd64`Architecture
+2. Then upload the compressed package to the server`/root/`directory, and use`root`user login server
 
-> 如果你的服务器 cpu 架构不是`amd64`，自行将命令中的`amd64`替换为其他架构
+> if your server cpu Architecture is not`amd64`, replace the command in the`amd64`Replace with other schema
 
 ```
 cd /root/
@@ -35,20 +35,20 @@ systemctl enable x-ui
 systemctl restart x-ui
 ```
 
-## 建议系统
+## suggestion system
 - CentOS 7+
 - Ubuntu 16+
 - Debian 8+
 
-# 常见问题
-## 与 v2-ui 关系
-x-ui 相当于 v2-ui 的加强版，未来会加入更多功能，待 x-ui 功能稳定后，v2-ui 将不再提供更新
+# common problem
+## and v2-ui relation
+x-ui equivalent to v2-ui The enhanced version of , more functions will be added in the future. x-ui After the function is stabilized, v2-ui Updates will no longer be provided
 
-x-ui 可与 v2-ui 并存，数据不互通，不影响对方的运行
+x-ui can coexist with v2-ui, the data is not interoperable, and does not affect the operation of the other party
 
-## 从 v2-ui 迁移
-首先在安装了 v2-ui 的服务器上安装最新版 x-ui，然后使用以下命令进行迁移，将迁移本机 v2-ui 的`所有 inbound 账号数据`至 x-ui，`面板设置和用户名密码不会迁移`
-> 迁移成功后请`关闭 v2-ui` 并且`重启 x-ui`，否则 v2-ui 的 inbound 会与 x-ui 的 inbound 会产生`端口冲突`
+## Migrating from v2-ui
+First install the latest version of x-ui on the server where v2-ui is installed, and then use the following command to migrate, which will migrate the native v2-ui`All inbound account data`to x-ui，`Panel settings and username passwords are not migrated`
+> After the migration is successful, please`close v2-ui` and`reboot x-ui`,otherwise v2-ui The inbound will be the same as the inbound of x-ui will produce`port conflict`
 ```
 x-ui v2-ui
 ```
